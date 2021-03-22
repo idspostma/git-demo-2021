@@ -1,3 +1,62 @@
-a.{
-hover;
+
+/*hier komt voor mobiel*/
+.grid-container {
+    background-color: #e2fdff;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 100px 150x 250px auto 75px;
+    row-gap: 16px;
+    column-gap: 16px;
+    grid-template-areas:
+            "header"
+            "aside-small"
+            "aside-large"
+            "main"
+            "footer";
+}
+/*hier komt voor alles groter dan mobiel*/
+@media screen and (min-width:576px) {
+    .grid-container {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 150px 100px auto 100px;
+
+        grid-template-areas:
+                "header header"
+                "main aside-small"
+                "main aside-large"
+                "footer aside-large";
+    }
+}
+
+
+.grid-item {
+    padding: 8px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#grid-header {
+    background-color: #5465ff;
+    grid-area: header;
+}
+
+#grid-aside-large {
+    background-color: #788bff;
+    grid-area: aside-large;
+}
+
+#grid-aside-small {
+    background-color: #bfd7ff;
+    grid-area: aside-small
+}
+#grid-main {
+    background-color: #9bb1ff;
+    grid-area: main;
+}
+
+#grid-footer {
+    background-color: #bfd7ff;
+    grid-area: footer;
+
 }
